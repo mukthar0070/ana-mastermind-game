@@ -1,14 +1,28 @@
-Started GET "/" for 127.0.0.1 at 2017-10-27 13:52:38 -0200
+Started GET "/" for 127.0.0.1 at 2017-10-28 09:39:05 -0200
 Processing by Rails::WelcomeController#index as HTML
-  Rendering /Users/acardoso/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /Users/acardoso/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
-Completed 200 OK in 226ms (Views: 8.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 110ms (Views: 5.3ms)
 
 
-Started GET "/" for 127.0.0.1 at 2017-10-27 14:30:46 -0200
+Started GET "/" for 127.0.0.1 at 2017-10-28 09:41:41 -0200
 Processing by Rails::WelcomeController#index as HTML
-  Rendering /Users/acardoso/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /Users/acardoso/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
-Completed 200 OK in 217ms (Views: 9.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 98ms (Views: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-28 09:41:44 -0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-28 09:41:48 -0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 6ms (Views: 5.2ms)
 
 
