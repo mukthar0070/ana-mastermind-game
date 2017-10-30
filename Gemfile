@@ -4,7 +4,7 @@ gem 'rails', '~> 5.1.4'
 gem 'puma', '~> 3.7'
 
 group :development, :test do
-
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
