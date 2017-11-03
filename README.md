@@ -18,10 +18,15 @@ $ bundle install
 
 ### Running
 ```
-$ rails server
+$ bundle exec rails server
+```
+
+### Running (using Docker)
+```
+$ bundle exec rake runlocal
 ```
 
 ### Running Tests
 ```
-$ rspec
+$ bundle exec rspec
 ```
