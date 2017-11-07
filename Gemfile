@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 5.1.4'
 gem 'puma', '~> 3.7'
+gem 'tzinfo-data'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
