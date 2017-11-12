@@ -13,11 +13,11 @@ RUN mkdir /app
 
 WORKDIR /app
 
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
 
 RUN bundle install
 
-ADD . /app
+COPY . /app
 
 CMD bundle exec rails s -p $PORT -b '0.0.0.0'
