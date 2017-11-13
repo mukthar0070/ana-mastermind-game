@@ -2,9 +2,13 @@ language: ruby
 rvm:
   - 2.3.5
 
+services:
+  - docker
+
 before_install:
   - gem update --system
   - gem --version
+  - docker build --rm=false -t registry.heroku.com/ana-mastermind-game/web .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
