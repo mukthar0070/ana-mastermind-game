@@ -11,4 +11,7 @@ before_install:
   - docker build --rm=false -t registry.heroku.com/ana-mastermind-game/web .
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then echo "Branch is Master"; fi
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
+    docker push registry.heroku.com/ana-mastermind-game/web;
+    fi
