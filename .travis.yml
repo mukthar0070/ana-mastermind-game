@@ -13,8 +13,15 @@ jobs:
   include:
     - stage: unit tests
       script: "bundle exec rspec spec"
+    - stage: build docker image
+      script:
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t ana-mastermind-game .
+      - docker images
+      - docker tag ana-mastermind-game $DOCKER_USERNAME/ana-mastermind-game
+      - docker push $DOCKER_USERNAME/ana-mastermind-game
     - stage: deploy to dev
-      env:
+      env
         - HEROKU_APP=dev-ana-mastermind-game
       script: ./scripts/deploy_container_heroku.sh
       if: branch = master
