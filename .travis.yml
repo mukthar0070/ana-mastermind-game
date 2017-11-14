@@ -17,7 +17,7 @@ jobs:
       script: "docker build --rm=false -t registry.heroku.com/dev-ana-mastermind-game/web ."
       if: branch = master
     - stage: deploy to dev
-      script: "docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;"
+      script: "docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;"
       script: "docker push registry.heroku.com/dev-ana-mastermind-game/web"
       if: branch = master
     - stage: test dev
