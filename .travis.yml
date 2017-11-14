@@ -19,5 +19,13 @@ jobs:
       script: ./scripts/deploy_container_heroku.sh
       if: branch = master
     - stage: test dev
-      script: 'curl http://dev-ana-mastermind-game.herokuapp.com/health'
+      script: 'curl http://$HEROKU_APP.herokuapp.com/health'
+      if: branch = master
+    - stage: deploy to qa
+      env:
+        - HEROKU_APP=qa-ana-mastermind-game
+      script: ./scripts/deploy_container_heroku.sh
+      if: branch = master
+    - stage: test dev
+      script: 'curl http://$HEROKU_APP.herokuapp.com/health'
       if: branch = master
