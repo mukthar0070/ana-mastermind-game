@@ -8,10 +8,18 @@ services:
 before_install:
   - gem update --system
   - gem --version
-  - docker build --rm=false -t registry.heroku.com/ana-mastermind-game/web .
 
-after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
-    docker push registry.heroku.com/ana-mastermind-game/web;
-    fi
+jobs:
+  include:
+    - stage: unit tests
+      script: "bundle exec rspec spec"
+    - stage: build docker image
+      script: "docker build --rm=false -t registry.heroku.com/dev-ana-mastermind-game/web ."
+      if: branch = master
+    - stage: deploy to dev
+      script: "docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;"
+      script: "docker push registry.heroku.com/dev-ana-mastermind-game/web"
+      if: branch = master
+    - stage: test dev
+      script: 'curl http://dev-ana-mastermind-game.herokuapp.com/health'
+      if: branch = master
