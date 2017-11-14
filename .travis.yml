@@ -26,6 +26,6 @@ jobs:
         - HEROKU_APP=qa-ana-mastermind-game
       script: ./scripts/deploy_container_heroku.sh
       if: branch = master
-    - stage: test dev
+    - stage: test qa
       script: 'curl http://$HEROKU_APP.herokuapp.com/health'
       if: branch = master
