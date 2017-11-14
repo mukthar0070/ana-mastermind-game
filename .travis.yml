@@ -13,9 +13,8 @@ jobs:
   include:
     - stage: unit tests
       script: "bundle exec rspec spec"
-    - stage: build docker image
-      script: "docker build --rm=false -t registry.heroku.com/dev-ana-mastermind-game/web ."
     - stage: deploy to dev
+      script: "docker build --rm=false -t registry.heroku.com/dev-ana-mastermind-game/web ."
       script: "docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;"
       script: "docker push registry.heroku.com/dev-ana-mastermind-game/web"
     - stage: test dev
