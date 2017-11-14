@@ -14,6 +14,8 @@ jobs:
     - stage: unit tests
       script: "bundle exec rspec spec"
     - stage: deploy to dev
+      env:
+        - HEROKU_APP=dev-ana-mastermind-game
       script: ./scripts/deploy_container_heroku.sh
     - stage: test dev
       script: 'curl http://dev-ana-mastermind-game.herokuapp.com/health'
