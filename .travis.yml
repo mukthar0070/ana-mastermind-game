@@ -20,6 +20,7 @@ jobs:
       - docker images
       - docker tag ana-mastermind-game $DOCKER_USERNAME/ana-mastermind-game
       - docker push $DOCKER_USERNAME/ana-mastermind-game
+      if: branch = master
     - stage: deploy to dev
       env:
         - HEROKU_APP=dev-ana-mastermind-game
@@ -40,5 +41,7 @@ jobs:
       env:
         - HEROKU_APP=ana-mastermind-game
       script: ./scripts/deploy_container_heroku.sh
+      if: branch = master
     - stage: test prod
       script: 'curl http://ana-mastermind-game.herokuapp.com/health'
+      if: branch = master
